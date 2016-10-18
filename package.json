@@ -1,0 +1,18 @@
+{
+  "name": "granite-bootstrap",
+  "authors": [
+    "Horacio Gonzalez <horacio.gonzalez@gmail.com>"
+  ],
+  "description": "Polymer wrap for Bootstrap",
+  "version": "0.1.2",
+  "repository": "LostInBrittany/granite-bootstrap",
+  "main": "granite-bootstrap-generator.js",
+  "author": "",
+  "scripts": {
+    "generate": "node tools/granite-bootstrap-generator.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^0.30.0"
+  }
+}
