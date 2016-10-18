@@ -129,6 +129,10 @@ granite-bootstrap.html  granite-bootstrap-min.html  granite-bootstrap-theme.html
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Note on semver versioning
+
+I'm aligning the versions of this element with Bootstrap version, in order to make easier to choose the right version
+ 
 ## License
 
 [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
