@@ -56,7 +56,12 @@ In your element's template you add the include for the *granite-bootstrap* modul
     <style>:host { display: block; }</style>
     Hi
   </template>
-  <script>Polymer({is: 'x-foo'});</script>
+  <script>
+    class XFoo extends Polymer.Element {
+      static get is() { return 'x-foo'; }
+    }
+    window.customElements.define(XFoo.is, XFoo);
+  </script>
 </dom-module>
 ```
  
@@ -71,25 +76,25 @@ Recover Bootstrap distribution using `bower install`:
 
 ```
 $ bower install
-bower bootstrap#~3.3.7          cached https://github.com/twbs/bootstrap.git#3.3.6
-bower bootstrap#~3.3.7        validate 3.3.6 against https://github.com/twbs/bootstrap.git#~3.3.6
-bower jquery#1.9.1 - 2          cached https://github.com/jquery/jquery-dist.git#2.2.3
-bower jquery#1.9.1 - 2        validate 2.2.3 against https://github.com/jquery/jquery-dist.git#1.9.1 - 2
-bower bootstrap#~3.3.6         install bootstrap#3.3.6
-bower jquery#1.9.1 - 2         install jquery#2.2.3
+bower bootstrap#3.3.7           cached https://github.com/twbs/bootstrap.git#3.3.7
+bower bootstrap#3.3.7         validate 3.3.7 against https://github.com/twbs/bootstrap.git#3.3.7
+bower jquery#1.9.1 - 3          cached https://github.com/jquery/jquery-dist.git#3.2.1
+bower jquery#1.9.1 - 3        validate 3.2.1 against https://github.com/jquery/jquery-dist.git#1.9.1 - 3
+bower bootstrap#3.3.7          install bootstrap#3.3.7
+bower jquery#1.9.1 - 3         install jquery#3.2.1
 
 bootstrap#3.3.7 bower_components/bootstrap
-└── jquery#2.2.3
+└── jquery#3.2.1
 ```
 
-Currently *granite-bootstrap* uses Bootstrap version 3.3.6, if you need another version you can change it in `bower.json` file.
+Currently *granite-bootstrap* uses Bootstrap version 3.3.7, if you need another version you can change it in `bower.json` file.
 
 
 #### 2. Generate the components
 
 Using NodeJS and the `granite-bootstrap-generator.js` to transform Bootstrap CSS files into polymer elements.
 
-You need to do a `npm install` to recover the rependencies and then `node  granite-bootstrap-generator.js` to execute the script:
+You need to do a `npm install` to recover the rependencies and then `node  tools/granite-bootstrap-generator.js` to execute the script:
 
 ```
 $ npm install
@@ -110,7 +115,7 @@ granite-bootstrap@0.1.0 /home/horacio/cityzendata/git/webcomponents/granite-boot
       │   └── concat-map@0.0.1 
       └── once@1.3.3 
 
-$ node granite-bootstrap-generator.js
+$ node tools/granite-bootstrap-generator.js
 ```
 
 After executing it, a series of HTML files is generated in the folder, each one corresponding to a Bootstrap CSS file.
