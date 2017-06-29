@@ -1,8 +1,12 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LostInBrittany/granite-bootstrap)
+
 ## granite-bootstrap
 
 *granite-bootstrap* is a wrapping of [Bootstrap](http://getbootstrap.com/) CSS as [Polymer](https://www.polymer-project.org/) [shared styles](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) modules (i.e. inside `<dom-module>` tags).
 
 > This project replaces and updates [polymer-bootstrap](https://github.com/LostInBrittany/polymer-boostrap), that won't be updated anymore
+> Hybrid Polymer element, 1.x-2.x ready
+
 
 ### Using *granite-bootstrap* modules
 
@@ -17,7 +21,7 @@ Add the dependency to the `bower.json` of your application:
 ```
    "dependencies": {
      [...]
-     "granite-bootstrap": "granite-bootstrap#0.1.1"
+     "granite-bootstrap": "LostInBrittany/granite-bootstrap#^3.3.7"
    }
 ``` 
 

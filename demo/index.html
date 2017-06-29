@@ -60,45 +60,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   <body unresolved>
 
-    <dom-module is="example-hidden">
-      <template>
-        <style>
-          :host {
-            display: block;
-            width: 100%;
-          }
-          input {
-            margin-bottom: 10px;
-          }
-        </style>
-        <input type="button" on-click="toggle" value="Click here">
-        <granite-alert level="success" hide="{{hide}}">
-          Well done!
-        </granite-alert>
-      </template>
-      <script>
-        Polymer({
-          is: "example-hidden",
-          properties: {
-            hide: {
-              type: Boolean,
-              value: true,
-            }
-          },
-          toggle: function() {
-            console.debug("[example-hidden] toggle");
-            this.hide = !this.hide;
-          }
-        });
-      </script>
-    </dom-module>  
-
+   
 
     <div class="vertical-section-container centered">
 
       <h3>granite-boostrap</h3>
       <demo-snippet class="centered-demo">
         <template>
+          <granite-bootstrap-example></granite-bootstrap-example>
           <dom-module id="granite-bootstrap-example">
             <template>
               <style include="granite-bootstrap-min"></style>
@@ -111,6 +80,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                   </tr>
                 </template>
               </table>  
+              
             </template>
 
             <script>
@@ -132,7 +102,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               });
             </script>
           </dom-module>
-          <granite-bootstrap-example></granite-bootstrap-example>
         </template>
       </demo-snippet>
     </div>
