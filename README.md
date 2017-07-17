@@ -7,6 +7,12 @@
 > This project replaces and updates [polymer-bootstrap](https://github.com/LostInBrittany/polymer-boostrap), that won't be updated anymore
 > Hybrid Polymer element, 1.x-2.x ready
 
+## Doc & demo
+
+[https://lostinbrittany.github.io/granite-bootstrap](https://lostinbrittany.github.io/granite-bootstrap)
+
+
+
 
 ### Using *granite-bootstrap* modules
 
