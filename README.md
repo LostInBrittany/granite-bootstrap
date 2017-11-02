@@ -114,7 +114,7 @@ Done in 0.55s.
 Currently *granite-bootstrap* uses Bootstrap version 4.0.0-beta.2, if you need another version you can change simply install it.
 
 
-#### 2. Generate the components
+#### 3. Generate the components
 
 Using NodeJS and the `granite-css-modularizer.js` to transform Bootstrap CSS files into polymer elements.
 
