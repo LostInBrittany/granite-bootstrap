@@ -2,7 +2,7 @@
 
 ## granite-bootstrap
 
-*granite-bootstrap* is a wrapping of [Bootstrap](http://getbootstrap.com/) CSS as [Polymer](https://www.polymer-project.org/) [shared styles](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) modules (i.e. inside `<dom-module>` tags).
+*granite-bootstrap* is a wrapping of [Bootstrap](http://getbootstrap.com/) CSS as [Polymer](https://www.polymer-project.org/) [shared styles modules](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) (i.e. inside `<dom-module>` tags).
 
 > This project replaces and updates [polymer-bootstrap](https://github.com/LostInBrittany/polymer-boostrap), that won't be updated anymore
 > Hybrid Polymer element, 1.x-2.x ready
@@ -10,7 +10,6 @@
 ## Doc & demo
 
 [https://lostinbrittany.github.io/granite-bootstrap](https://lostinbrittany.github.io/granite-bootstrap)
-
 
 
 
@@ -27,7 +26,7 @@ Add the dependency to the `bower.json` of your application:
 ```
    "dependencies": {
      [...]
-     "granite-bootstrap": "LostInBrittany/granite-bootstrap#^3.3.7"
+     "granite-bootstrap": "LostInBrittany/granite-bootstrap#^4.0.2-beta.2"
    }
 ``` 
 
@@ -72,64 +71,63 @@ In your element's template you add the include for the *granite-bootstrap* modul
  
 
 
+### Generating the style modules
 
-### Generating the elements
+To generate the style modules we use the [granite-css-modularizer](https://github.com/LostInBrittany/granite-css-modularizer) node script:
 
-#### 1. Recover Bootstrap 
+#### 1. Clone the repository and recover the dependencies of `granite-css-modularizer`
 
-Recover Bootstrap distribution using `bower install`:
+Clone the [granite-css-modularizer](https://github.com/LostInBrittany/granite-css-modularizer) repository and recover the dependencies using `yarn` (or `npm`) :
 
 ```
-$ bower install
-bower bootstrap#~3.3.7          cached https://github.com/twbs/bootstrap.git#3.3.6
-bower bootstrap#~3.3.7        validate 3.3.6 against https://github.com/twbs/bootstrap.git#~3.3.6
-bower jquery#1.9.1 - 2          cached https://github.com/jquery/jquery-dist.git#2.2.3
-bower jquery#1.9.1 - 2        validate 2.2.3 against https://github.com/jquery/jquery-dist.git#1.9.1 - 2
-bower bootstrap#~3.3.6         install bootstrap#3.3.6
-bower jquery#1.9.1 - 2         install jquery#2.2.3
-
-bootstrap#3.3.7 bower_components/bootstrap
-└── jquery#2.2.3
+$ yarn install
+yarn install v1.2.1
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.83s.
 ```
 
-Currently *granite-bootstrap* uses Bootstrap version 3.3.6, if you need another version you can change it in `bower.json` file.
+#### 2. Recover Bootstrap 
+
+Recover Bootstrap distribution using `yarn` (or `npm`):
+
+```
+$ yarn add bootstrap@4.0.0-beta.2
+yarn add v1.2.1
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "jquery@1.9.1 - 3".
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "popper.js@^1.12.3".
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 1 new dependency.
+└─ bootstrap@4.0.0-beta.2
+Done in 0.55s.
+```
+
+Currently *granite-bootstrap* uses Bootstrap version 4.0.0-beta.2, if you need another version you can change simply install it.
 
 
 #### 2. Generate the components
 
-Using NodeJS and the `granite-bootstrap-generator.js` to transform Bootstrap CSS files into polymer elements.
-
-You need to do a `npm install` to recover the rependencies and then `node  granite-bootstrap-generator.js` to execute the script:
+Using NodeJS and the `granite-css-modularizer.js` to transform Bootstrap CSS files into polymer elements.
 
 ```
-$ npm install
-granite-bootstrap@0.1.0 /home/horacio/cityzendata/git/webcomponents/granite-bootstrap
-└─┬ fs-extra@0.30.0 
-  ├── graceful-fs@4.1.3 
-  ├── jsonfile@2.3.0 
-  ├── klaw@1.2.0 
-  ├── path-is-absolute@1.0.0 
-  └─┬ rimraf@2.5.2 
-    └─┬ glob@7.0.3 
-      ├─┬ inflight@1.0.4 
-      │ └── wrappy@1.0.1 
-      ├── inherits@2.0.1 
-      ├─┬ minimatch@3.0.0 
-      │ └─┬ brace-expansion@1.1.4 
-      │   ├── balanced-match@0.4.1 
-      │   └── concat-map@0.0.1 
-      └── once@1.3.3 
-
-$ node granite-bootstrap-generator.js
+$ node ../granite-css-modularizer.js ./node_modules/bootstrap/dist/css ./css_modules/granite-bootstrap
 ```
 
-After executing it, a series of HTML files is generated in the folder, each one corresponding to a Bootstrap CSS file.
+After executing it, a series of HTML files is generated in the `./css_modules/granite-bootstrap` folder, each one corresponding to a Bootstrap CSS file.
 
 ```
-$ ls *.html
-granite-bootstrap.html  granite-bootstrap-min.html  granite-bootstrap-theme.html  granite-bootstrap-theme-min.html
+$ ls ./css_modules/granite-bootstrap/*.html
+granite-bootstrap-grid.html  granite-bootstrap-grid-min.html  granite-bootstrap.html  granite-bootstrap-min.html  granite-bootstrap-reboot.html  granite-bootstrap-reboot-min.html
 ```
-
 
 ## Contributing
 
