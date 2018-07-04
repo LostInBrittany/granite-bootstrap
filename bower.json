@@ -10,7 +10,6 @@
     "polymer",
     "boostrap"
   ],
-  "main": "granite-bootstrap-min.html",  
   "license": "MIT",
   "homepage": "https://github.com/LostInBrittany/granite-bootstrap",
   "ignore": [],
