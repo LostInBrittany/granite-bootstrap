@@ -1,4 +1,6 @@
-const $_documentContainer = document.createElement('template');
+if(!$_documentContainer){
+    const $_documentContainer = document.createElement('template');
+}
 $_documentContainer.setAttribute('style', 'display: none;');
 
 $_documentContainer.innerHTML = `<dom-module id="granite-bootstrap-min"><template><style>

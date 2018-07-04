@@ -1,5 +1,2 @@
-bower_components
 node_modules
-github-token
-package-mine.json
-.idea/
+.idea
