@@ -137,6 +137,20 @@ granite-bootstrap-grid.html  granite-bootstrap-grid-min.html  granite-bootstrap.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Install dependencies and run the demo
+
++   Run npm install from the repo directory:
+
+    ```
+     npm install
+    ```
++   Run the Polymer development server from the root project directory:
+
+    ```
+    polymer serve --open
+    ```
+
+
 ## Note on semver versioning
 
 I'm aligning the versions of this element with Bootstrap version, in order to make easier to choose the right version

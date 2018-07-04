@@ -20,191 +20,56 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     <script>
 
-      // setup Polymer options
-      window.Polymer = {lazyRegister: true, dom: 'shadow'};
-
       // load webcomponents polyfills
-      (function() {
-        if ('registerElement' in document
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template')) {
-          // browser has web components
-        } else {
-          // polyfill web components
-          var e = document.createElement('script');
-          e.src = '../../webcomponentsjs/webcomponents-loader.js';
-          document.head.appendChild(e);
-        }
+      (function () {
+          if ('registerElement' in document
+                  && 'import' in document.createElement('link')
+                  && 'content' in document.createElement('template')) {
+              // browser has web components
+          } else {
+              // polyfill web components
+              var e = document.createElement('script');
+              e.src = '../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js';
+              document.head.appendChild(e);
+          }
       })();
 
 
     </script>
-    <script type="module" src="../../../@polymer/polymer/polymer-legacy.js"></script>
+    <!--<script type="module" src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>-->
 
-
-    <script type="module" src="../../../@polymer/paper-styles/color.js"></script>
-    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
-    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
-    <script type="module" src="../../../@polymer/iron-icons/iron-icons.js"></script>
-    
-    <script type="module" src="../granite-bootstrap-min.js"></script>
+    <script type="module">
+      import 'granite-bootstrap-example.js';
+    </script>
 
     <style is="custom-style" include="demo-pages-shared-styles">
-      .spacer-10 { width:100%; height:10px; }
-      .spacer-50 { width:100%; height:50px; }
+      .spacer-10 {
+          width: 100%;
+          height: 10px;
+      }
+
+      .spacer-50 {
+          width: 100%;
+          height: 50px;
+      }
+
       .vertical-section-container {
-        max-width: 550px;
+          max-width: 550px;
       }
     </style>
   </head>
 
-  <script type="module">
-const $_documentContainer = document.createElement('template');
+  <body>
 
-$_documentContainer.innerHTML = `<b<script type="module" src="../granite-bootstrap-min.js">   These imperative modules that innerHTML your HTML are
-        a hacky way to be sure that any mixins in included style
-        modules are ready before any elements that reference them are
-        instantiated, otherwise the CSS @apply mixin polyfill won't be
-        able to expand the underlying CSS custom properties.
-        See: https://github.com/Polymer/polymer-modulizer/issues/154
-        --&gt;
-    <script type="module">
-const \$_documentContainer = document.createElement('template');
-\$_documentContainer.setAttribute('style', 'display: none;');
-
-\$_documentContainer.innerHTML = \`<style is="custom-style" include="demo-pages-shared-styles">
-      .spacer-10 { width:100%; height:10px; }
-      .spacer-50 { width:100%; height:50px; }
-      .vertical-section-container {
-        max-width: 550px;
-      }
-    </style>\`;
-
-document.head.appendChild(\$_documentContainer.content);
-&lt;/script> to expand the underlying CSS custom properties.
-        See: https://github.com/Polymer/polymer-modulizer/issues/154
-        --&gt;
-    <script type="module">
-const \$_documentContainer = document.createElement('template');
-\$_documentContainer.setAttribute('style', 'display: none;');
-
-\$_documentContainer.innerHTML = \`<style is="custom-style" include="demo-pages-shared-styles">
-      .spacer-10 { width:100%; height:10px; }
-      .spacer-50 { width:100%; height:50px; }
-      .vertical-section-container {
-        max-width: 550px;
-      }
-    </style>\`;
-
-document.head.appendChild(\$_documentContainer.content);
-&lt;/script>ranite-bootstrap-example&gt;
-          <script type="module">
-const \$_documentContainer = document.createElement('template');
-
-\$_documentContainer.innerHTML = \`<dom-module id="granite-bootstrap-example">
-            <template>
-              <style include="granite-bootstrap-min"></style>
-              <table class="table  table-hover">
-                <tbody><tr><th>Surname</th><th>Name</th></tr>
-                <template is="dom-repeat" items="{{people}}" as="person">
-                  <tr>
-                    <td>{{person.lastname}}</td>
-                    <td>{{person.firstname}}</td>
-    <script type="module">
-const \\\$_documentContainer = document.createElement('template');
-
-\\\$_documentContainer.innerHTML = \\\`<div class="vertical-section-container centered">
+    <div class="vertical-section-container centered">
 
       <h3>granite-boostrap</h3>
       <demo-snippet class="centered-demo">
         <template>
           <granite-bootstrap-example></granite-bootstrap-example>
-          <dom-module id="granite-bootstrap-example">
-            <template>
-              <style include="granite-bootstrap-min"></style>
-              <table class="table  table-hover">
-                <tbody><tr><th>Surname</th><th>Name</th></tr>
-                <template is="dom-repeat" items="{{people}}" as="person">
-                  <tr>
-                    <td>{{person.lastname}}</td>
-                    <td>{{person.firstname}}</td>
-                  </tr>
-                </template>
-              </tbody></table>  
-              
-            </template>
-
-            <script>
-              Polymer({
-                is: "granite-bootstrap-example",
-                properties: {
-                  people: {
-                    type: Array,
-                    value: function() {
-                      return [
-                        { firstname: "Jack", lastname: "Aubrey" },
-                        { firstname: "Anne", lastname: "Elliot" },
-                        { firstname: "Stephen", lastname: "Maturin" },
-                        { firstname: "Emma", lastname: "Woodhouse" }
-                      ]
-                    }
-                  }
-                }
-              });
-            &lt;/script>
-          </dom-module>
         </template>
       </demo-snippet>
-    </div>\\\`;
+    </div>
 
-document.body.appendChild(\\\$_documentContainer.content);
-&lt;/script></tr>r.js';
-import '../../../@polymer/iron-demo-helpers/demo-snippet.js';
-import '../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
-import '../../../@polymer/iron-icons/iron-icons.js';
-import '../granite-bootstrap-min.js';
-import { Polymer } from '../../../@polymer/polymer/lib/legacy/polymer-fn.js';
-Polymer({
-  is: "granite-bootstrap-example",
-  properties: {
-    people: {
-      type: Array,
-      value: function() {
-        return [
-          { firstname: "Jack", lastname: "Aubrey" },
-          { firstname: "Anne", lastname: "Elliot" },
-          { firstname: "Stephen", lastname: "Maturin" },
-          { firstname: "Emma", lastname: "Woodhouse" }
-        ]
-      }
-    }
-  }
-});
-</template></tbody></table></template></dom-module>\`;
-
-document.body.appendChild(\$_documentContainer.content);
-&lt;/script></b<script>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>/granite-bootstrap-min.js';
-import { Polymer } from '../../../@polymer/polymer/lib/legacy/polymer-fn.js';
-Polymer({
-  is: "granite-bootstrap-example",
-  properties: {
-    people: {
-      type: Array,
-      value: function() {
-        return [
-          { firstname: "Jack", lastname: "Aubrey" },
-          { firstname: "Anne", lastname: "Elliot" },
-          { firstname: "Stephen", lastname: "Maturin" },
-          { firstname: "Emma", lastname: "Woodhouse" }
-        ]
-      }
-    }
-  }
-});
-</template></tbody></table></template></dom-module>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
+  </body>
+</html>
