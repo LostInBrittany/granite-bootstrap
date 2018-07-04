@@ -8,7 +8,7 @@
   ],
   "homepage": "https://github.com/mohammed-softordi/granite-bootstrap",
   "name": "@polymer/granite-bootstrap",
-  "version": "4.0.0-polymer-3",
+  "version": "4.0.0-polymer3",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
