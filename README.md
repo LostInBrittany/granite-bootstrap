@@ -15,18 +15,18 @@
 
 ### Using *granite-bootstrap* modules
 
-Using  polymer [shared styles](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) modules is a two-step process: you need to use a `<link>` tag to import the module, and a `<style>` tag to include the styles in the correct place.
+Using  polymer [style modules](https://www.polymer-project.org/3.0/docs/devguide/style-shadow-dom#style-modules) modules is a two-step process: you need to use ES6 module imports to import the module, and a `<style>` tag to include the styles in the correct place.
 
 To use *granite-bootstrap* in an element:
 
 #### 1. Add the dependency
 
-Add the dependency to the `bower.json` of your application:
+Add the dependency to the `package.json` of your application:
 
 ```
    "dependencies": {
      [...]
-     "granite-bootstrap": "LostInBrittany/granite-bootstrap#^4.0.2-beta.2"
+     "polymer3-granite-bootstrap": "^4.0.0-polymer3"
    }
 ``` 
 
@@ -35,13 +35,13 @@ And then recover them via `bower install`.
 
 #### 2. Import the *granite-bootstrap* module you want to use
 
-Usually you will simply want to import `granite-bootstrap.html` (wrap around `bootstrap.css`) or `granite-bootstrap-min.html`
+Usually you will simply want to import `granite-bootstrap.js` (wrap around `bootstrap.css`) or `granite-bootstrap-min.js`
 (wrap around `bootstrap.min.css`).
 
 Supossing you're using the standard folder locations for your components:
  
 ```
-<link rel="import" href="../granite-bootstrap/granite-bootstrap.html">
+ import 'granite-bootstrap.js';
 ``` 
 
 #### 3. Inside your component, use *granite-bootstrap* as shared style
@@ -57,7 +57,9 @@ In your element's template you add the include for the *granite-bootstrap* modul
 
 ```
 <!-- import the module  -->
-<link rel="import" href="../granite-bootstrap/granite-bootstrap.html">
+ <script type="module">
+    import 'granite-bootstrap.js';
+</script>
 <dom-module id="x-foo">
   <template>
     <!-- include the style module by name -->
