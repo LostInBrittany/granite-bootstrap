@@ -3,12 +3,12 @@ import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/iron-demo-helpers/demo-snippet.js';
 import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
 import '@polymer/paper-styles/color.js';
-import '../granite-bootstrap-min.js';
+import '../granite-bootstrap.js';
 
 class GraniteBootstrapExample extends PolymerElement {
     static get template() {
         return html`
-                <style include="granite-bootstrap-min"></style>
+                <style include="granite-bootstrap"></style>
                 <table class="table  table-hover">
                     <tr><th>Surname</th><th>Name</th></tr>
                     <template is="dom-repeat" items="{{people}}" as="person">
