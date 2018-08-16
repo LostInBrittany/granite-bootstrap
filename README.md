@@ -4,8 +4,8 @@
 
 *granite-bootstrap* is a wrapping of [Bootstrap](http://getbootstrap.com/) CSS as [Polymer](https://www.polymer-project.org/) [shared styles modules](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) (i.e. inside `<dom-module>` tags).
 
-> This project replaces and updates [polymer-bootstrap](https://github.com/LostInBrittany/polymer-boostrap), that won't be updated anymore
-> Hybrid Polymer element, 1.x-2.x ready
+> Polymer 3.x. element
+
 
 ## Doc & demo
 
@@ -19,29 +19,29 @@ Using  polymer [style modules](https://www.polymer-project.org/3.0/docs/devguide
 
 To use *granite-bootstrap* in an element:
 
-#### 1. Add the dependency
 
-Add the dependency to the `package.json` of your application:
+### 1. Install `granite-bootstrap`
 
+
+Install the component using [npm](https://www.npmjs.com/):
+
+```sh
+$ npm i @granite-elements/granite-bootstrap --save
 ```
-   "dependencies": {
-     [...]
-     "polymer3-granite-bootstrap": "^4.0.0-polymer3"
-   }
-``` 
 
-And then recover them via `bower install`.
+
+
 
 
 #### 2. Import the *granite-bootstrap* module you want to use
 
-Usually you will simply want to import `granite-bootstrap.js` (wrap around `bootstrap.css`) or `granite-bootstrap-min.js`
-(wrap around `bootstrap.min.css`).
 
-Supossing you're using the standard folder locations for your components:
+Once installed, import it in your application. Usually you will simply want to import `granite-bootstrap.js` (wrap around `bootstrap.css`) or `granite-bootstrap-min.js` (wrap around `bootstrap.min.css`).
+
+Supossing you want to import `granite-bootstrap.js`:
  
 ```
- import 'granite-bootstrap.js';
+import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
 ``` 
 
 #### 3. Inside your component, use *granite-bootstrap* as shared style
@@ -58,7 +58,7 @@ In your element's template you add the include for the *granite-bootstrap* modul
 ```
 <!-- import the module  -->
  <script type="module">
-    import 'granite-bootstrap.js';
+    import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
 </script>
 <dom-module id="x-foo">
   <template>
