@@ -20,7 +20,7 @@ Using  polymer [style modules](https://www.polymer-project.org/3.0/docs/devguide
 To use *granite-bootstrap* in an element:
 
 
-### 1. Install `granite-bootstrap`
+#### 1. Install `granite-bootstrap`
 
 
 Install the component using [npm](https://www.npmjs.com/):
@@ -28,9 +28,6 @@ Install the component using [npm](https://www.npmjs.com/):
 ```sh
 $ npm i @granite-elements/granite-bootstrap --save
 ```
-
-
-
 
 
 #### 2. Import the *granite-bootstrap* module you want to use
