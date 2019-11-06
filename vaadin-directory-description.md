@@ -2,11 +2,14 @@
 [![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/LostInBrittanygranite-bootstrap.svg)](https://vaadin.com/directory/component/LostInBrittanygranite-bootstrap)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LostInBrittany/granite-bootstrap)
 
+
 ## granite-bootstrap
 
 *granite-bootstrap* is a wrapping of [Bootstrap](http://getbootstrap.com/) CSS as [Polymer](https://www.polymer-project.org/) [shared styles modules](https://www.polymer-project.org/1.0/docs/devguide/styling.html#style-modules) (i.e. inside `<dom-module>` tags).
 
 > Polymer 3.x. element
+
+
 
 
 ### Using *granite-bootstrap* modules
@@ -153,3 +156,4 @@ I'm aligning the versions of this element with Bootstrap version, in order to ma
 ## License
 
 [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
