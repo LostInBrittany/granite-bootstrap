@@ -9,6 +9,7 @@ class GraniteBootstrapExample extends PolymerElement {
     static get template() {
         return html`
                 <style include="granite-bootstrap"></style>
+                <granite-bootstrap></granite-bootstrap>
                 <table class="table  table-hover">
                     <tr><th>Surname</th><th>Name</th></tr>
                     <template is="dom-repeat" items="{{people}}" as="person">

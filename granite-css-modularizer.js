@@ -26,8 +26,17 @@ if (process.argv.length != 4) {
   let moduleName = function(filename) {
     return `granite-${filename.replace('.css', '').replace('.min','-min')}`;
   }
+
+  let className = function(filename) {
+
+    nameArray = filename.replace('.css', '').replace('.min','Min').split('-');
+    nameArray = nameArray.map((name => {
+      return  name.charAt(0).toUpperCase() + name.slice(1);
+    }))
+    return `Granite${nameArray.join('')}`;
+  }
   
-  let getHeader = function() {
+  let getHeader = function(filename) {
     return `  /**
     @license Apache 2.0
     Copyright (c) 2017 Horacio "LostInBrittany" Gonzalez for the style module encapsulation of CSS files
@@ -43,13 +52,15 @@ if (process.argv.length != 4) {
     @demo demo/index.html
     */
 
-    const styleElement = document.createElement('dom-module');
-    styleElement.innerHTML = \`<template><style>\n`;
+    import {html} from '@polymer/polymer/polymer-element.js';
+    const ${className(filename)} = html\`
+      <dom-module id='${moduleName(filename)}'><template><style>
+    `
   }
   let getFooter = function(filename) { 
     return `
-    </style></template>\`;
-    styleElement.register('${moduleName(filename)}'); 
+      </style></template></dom-module>\`;
+    document.head.appendChild(${className(filename)}.content);
     `;
   }
   
@@ -64,7 +75,7 @@ if (process.argv.length != 4) {
       
       let data = fs.readFileSync(item.path, "utf8").replace(/\\/g,'\\\\');
       
-      let out = getHeader() + data + getFooter(filename);
+      let out = getHeader(filename) + data + getFooter(filename);
       
       fs.writeFileSync(`${targetFolder}/${moduleName(filename)}.js`, out);    
           
