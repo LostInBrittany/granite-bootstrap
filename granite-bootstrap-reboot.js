@@ -13,7 +13,7 @@
     @demo demo/index.html
     */
 
-    import {html} from '@polymer/polymer/polymer-element.js';
+   import {html, render} from 'lit-html';
     const GraniteBootstrapReboot = html`
       <dom-module id='granite-bootstrap-reboot'><template><style>
     /*!
@@ -348,5 +348,5 @@ template {
 }
 /*# sourceMappingURL=bootstrap-reboot.css.map */
       </style></template></dom-module>`;
-    document.head.appendChild(GraniteBootstrapReboot.content);
+    render(GraniteBootstrapReboot, document.head);
     

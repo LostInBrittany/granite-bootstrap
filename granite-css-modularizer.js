@@ -52,7 +52,7 @@ if (process.argv.length != 4) {
     @demo demo/index.html
     */
 
-    import {html} from '@polymer/polymer/polymer-element.js';
+   import {html, render} from 'lit-html';
     const ${className(filename)} = html\`
       <dom-module id='${moduleName(filename)}'><template><style>
     `
@@ -60,7 +60,7 @@ if (process.argv.length != 4) {
   let getFooter = function(filename) { 
     return `
       </style></template></dom-module>\`;
-    document.head.appendChild(${className(filename)}.content);
+    render(${className(filename)}, document.head);
     `;
   }
   

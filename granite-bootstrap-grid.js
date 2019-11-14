@@ -13,7 +13,7 @@
     @demo demo/index.html
     */
 
-    import {html} from '@polymer/polymer/polymer-element.js';
+   import {html, render} from 'lit-html';
     const GraniteBootstrapGrid = html`
       <dom-module id='granite-bootstrap-grid'><template><style>
     /*!
@@ -3736,5 +3736,5 @@ html {
 }
 /*# sourceMappingURL=bootstrap-grid.css.map */
       </style></template></dom-module>`;
-    document.head.appendChild(GraniteBootstrapGrid.content);
+    render(GraniteBootstrapGrid, document.head);
     

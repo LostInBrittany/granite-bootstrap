@@ -8,16 +8,17 @@
   ],
   "homepage": "https://github.com/lostinbrittany/granite-bootstrap",
   "name": "@granite-elements/granite-bootstrap",
-  "version": "4.3.1-1",
+  "version": "4.3.1-2",
   "resolutions": {},
   "main": "granite-bootstrap-min.js",
   "author": "Horacio Gonzalez <horacio.gonzalez@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@polymer/polymer": "3.3.0"
+    "lit-html": "^1.1.2"
   },
   "devDependencies": {
     "bootstrap": "4.3.1",
+    "@polymer/polymer": "3.3.0",
     "@polymer/iron-component-page": "^4.0.0",
     "@polymer/iron-demo-helpers": "^3.0.0",
     "@polymer/iron-icon": "^3.0.0",

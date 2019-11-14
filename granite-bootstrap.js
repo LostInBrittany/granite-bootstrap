@@ -13,7 +13,7 @@
     @demo demo/index.html
     */
 
-    import {html} from '@polymer/polymer/polymer-element.js';
+   import {html, render} from 'lit-html';
     const GraniteBootstrap = html`
       <dom-module id='granite-bootstrap'><template><style>
     /*!
@@ -10055,5 +10055,5 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /*# sourceMappingURL=bootstrap.css.map */
       </style></template></dom-module>`;
-    document.head.appendChild(GraniteBootstrap.content);
+    render(GraniteBootstrap, document.head);
     
